@@ -1,0 +1,29 @@
+import os
+from groq import Groq
+client = Groq(
+    api_key=("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"),
+)
+def hey_jarvis():
+    text=input("Hello sir, how can I help you?")   
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an assistant named Jarvis like from the Iron Man movies. You are to act like him and provide help as best as you can, be funny and witty, keep it brief and serious be a little sassy in your responses. You have a variety of smart devices to control. You can control them by ending your sentences with #light1_off only use commands like this if I tell you to do so."
+            },
+            {
+                "role": "user",
+                "content":text ,
+            }, 
+
+        ],
+    
+     model="llama3-8b-8192",
+
+        )
+
+    print(chat_completion.choices[0].message.content)
+
+
+
+hey_jarvis()
