@@ -3,7 +3,7 @@ from groq import Groq
 from pygame import mixer
 import time
 client = Groq(
-    api_key=("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"),
+    api_key=("api_key"),
 )
 def hey_jarvis():
     text=input("Hello sir, how can I help you?")   
